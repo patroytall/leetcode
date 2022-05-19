@@ -51,10 +51,10 @@ function minCostClimbingStairs(cost) {
 }
 
 [
-    { input: [1,2], output: 1 },
-    { input: [2,1], output: 1 },
-    { input: [10,15,20], output: 15 },
-    { input: [1,100,1,1,1,100,1,1,100,1], output: 6 },
+    { input: [1, 2], output: 1 },
+    { input: [2, 1], output: 1 },
+    { input: [10, 15, 20], output: 15 },
+    { input: [1, 100, 1, 1, 1, 100, 1, 1, 100, 1], output: 6 },
 ].forEach(e => {
     const output = minCostClimbingStairs(e.input);
     if (output !== e.output) {
