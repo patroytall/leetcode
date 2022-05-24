@@ -25,14 +25,12 @@ Constraints:
 The number of nodes in the tree is in the range [0, 2000].
 -1000 <= Node.val <= 1000 */
 
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
+function TreeNode(val, left, right) {
+    this.val = (val === undefined ? 0 : val)
+    this.left = (left === undefined ? null : left)
+    this.right = (right === undefined ? null : right)
+}
+
 /**
  * @param {TreeNode} root
  * @return {number[][]}
@@ -61,29 +59,18 @@ function levelOrderBottom(root) {
     return result.reverse();
 };
 
+function N(val, left, right) {
+    return new TreeNode(val, left, right);
+}
 
 [
     {
-        root: {
-            val: 3,
-            left: {
-                val: 9
-            },
-            right: {
-                val: 20,
-                left: {
-                    val: 15
-                },
-                right: {
-                    val: 7
-                }
-            }
-        }, output: [[15, 7], [9, 20], [3]]
+        root: N(3, N(9), N(20, N(15), N(7))),
+        output: [[15, 7], [9, 20], [3]]
     },
     {
-        root: {
-            val: 1
-        }, output: [[1]]
+        root: N(1),
+        output: [[1]]
     },
     {
         root: null, output: []
