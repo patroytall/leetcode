@@ -1,4 +1,4 @@
-/* Given a large array of numbers, find the 2nd largest and 2nd smallest numbers. 
+/* Given a large array of numbers, find the 2nd smallest and 2nd largest numbers. 
 
 You have limited memory available, but you can fit 10 more numbers.
 
