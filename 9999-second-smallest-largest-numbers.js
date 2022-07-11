@@ -21,12 +21,11 @@ function secondSmallestAndLargest(nums) {
     if (nums.length === 1) {
         return [num0, num0];
     }
-    const num1 = nums[1];
-    let smallest1 = num0 <= num1 ? num0 : num1;
-    let smallest2 = num0 <= num1 ? num1 : num0;
-    let largest1 = num0 <= num1 ? num1 : num0;
-    let largest2 = num0 <= num1 ? num0 : num1;
-    for (let i = 2; i < nums.length; i++) {
+    let smallest1 = Number.MAX_SAFE_INTEGER;
+    let smallest2 = Number.MAX_SAFE_INTEGER;
+    let largest1 = Number.MIN_SAFE_INTEGER;
+    let largest2 = Number.MIN_SAFE_INTEGER;
+    for (let i = 0; i < nums.length; i++) {
         const n = nums[i];
         if (n < smallest1) {
             smallest2 = smallest1
@@ -50,6 +49,7 @@ function secondSmallestAndLargest(nums) {
     { nums: [-1, 1], output: [1, -1] },
     { nums: [1, -1, 5, -6], output: [-1, 1] },
     { nums: [1, -1, -6, 5, 7, -6, 7], output: [-1, 5] },
+    { nums: [11, -6,  -9, -9,  -1, -10, -9, -8, 8, 11, -2, -10,  4, -4,  11, 8, 6], output: [-9, 8] }
 ].forEach(e => {
     const output = secondSmallestAndLargest(e.nums);
     if (output[0] !== e.output[0] || output[1] !== e.output[1]) {
